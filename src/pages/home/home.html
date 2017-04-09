@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img [src]="profilePicture">
+      </ion-avatar>
+      <h2>{{ user.data.data["name"] }}</h2>
+      <p>{{ user.data.data["email"] }}</p>
+    </ion-item>
+
+    <img src="assets/images/qr_code.png">
+
+    <ion-card-content>
+      <p class="qr-code-header">This is your unique personal QR code</p>
+      <button ion-button full (click)="scan()">Scan</button>
+      <button ion-button full (click)="showEvents()">Events</button>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
